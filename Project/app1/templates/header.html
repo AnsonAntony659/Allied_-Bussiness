@@ -1,0 +1,165 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        .main-header{
+            width:100%;
+            background:white;
+            padding:18px 50px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            box-shadow:0 3px 10px rgba(0,0,0,0.08);
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        /* LOGO */
+
+        .logo{
+            font-size:38px;
+            font-weight:bold;
+            color:#cc0000;
+            font-family:cursive;
+        }
+
+        .logo span{
+            color:#111;
+        }
+
+        /* NAVBAR */
+
+        .navbar{
+            display:flex;
+            gap:30px;
+        }
+
+        .navbar a{
+            text-decoration:none;
+            color:#222;
+            font-size:16px;
+            font-weight:600;
+            transition:0.3s;
+            position:relative;
+        }
+
+        .navbar a:hover{
+            color:#cc0000;
+        }
+
+        .navbar a::after{
+            content:'';
+            width:0%;
+            height:2px;
+            background:#cc0000;
+            position:absolute;
+            left:0;
+            bottom:-6px;
+            transition:0.3s;
+        }
+
+        .navbar a:hover::after{
+            width:100%;
+        }
+
+        /* BUTTONS */
+
+        .auth-buttons{
+            display:flex;
+            gap:12px;
+        }
+
+        .auth-buttons a{
+            text-decoration:none;
+            padding:10px 22px;
+            border-radius:8px;
+            font-weight:bold;
+            transition:0.3s;
+            font-size:15px;
+        }
+
+        .login-btn{
+            border:2px solid #cc0000;
+            color:#cc0000;
+            background:white;
+        }
+
+        .login-btn:hover{
+            background:#cc0000;
+            color:white;
+        }
+
+        .signup-btn{
+            background:#cc0000;
+            color:white;
+        }
+
+        .signup-btn:hover{
+            background:#990000;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:900px){
+
+            .main-header{
+                flex-direction:column;
+                gap:18px;
+                padding:20px;
+            }
+
+           
+
+            .logo{
+                font-size:30px;
+                text-align:center;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header class="main-header">
+
+    <div class="logo">
+         𝓐𝓵𝓵𝓲𝓮𝓭 𝓑𝓾𝓼𝓲𝓷𝓮𝓼𝓼 𝓒𝓸𝓻𝓹𝓸𝓻𝓪𝓽𝓲𝓸𝓷
+    </div>
+
+    <div class="auth-buttons">
+
+        <a href="{% url 'login' %}" class="login-btn">
+            Log Out
+        </a>
+
+        <a href="{% url 'login' %}" class="signup-btn">
+            Sign Up
+        </a>
+        <a href="{% url 'home' %}" class="signup-btn">
+           home
+        </a>
+
+    </div>
+
+</header>
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allied Business Corporation</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+
+        .wel-note{
+            text-align: center;
+            flex: 1;
+        }
+
+        .wel-note h1{
+            font-size: 24px;
+            color: #222;
+        }
+
+        .wel-note h6{
+            margin-top: 5px;
+            color: #666;
+        }
+
+        .nav-actions{
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-actions a{
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-logout{
+            border: 2px solid #cc0000;
+            color: #cc0000;
+        }
+
+        .btn-logout:hover{
+            background-color: #cc0000;
+            color: white;
+        }
+
+        .btn-signup{
+            background-color: #cc0000;
+            color: white;
+        }
+
+        .btn-signup:hover{
+            background-color: #a80000;
+        }
+
+        /* ===== MAIN DASHBOARD ===== */
+
+        .dashboard{
+            display: flex;
+            min-height: calc(100vh - 90px);
+        }
+
+        /* ===== SIDEBAR ===== */
+
+        .sidebar{
+            width: 240px;
+            background-color: #1a1a2e;
+            padding: 25px 20px;
+        }
+
+        .sidebar h2{
+            color: white;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #cc0000;
+            padding-bottom: 10px;
+        }
+
+        .sidebar ul{
+            list-style: none;
+        }
+
+        .sidebar ul li{
+            margin-bottom: 12px;
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li:hover{
+            background-color: #cc0000;
+            transform: translateX(5px);
+        }
+
+        .sidebar ul li a{
+            display: block;
+            padding: 14px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* ===== CONTENT ===== */
+
+        .content{
+            flex: 1;
+            padding: 35px;
+        }
+
+        /* ===== HERO ===== */
+
+        .hero{
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        } */
+
+         .hero h1{
+            font-size: 38px;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .hero p{
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            max-width: 700px;
+        }
+
+        .hero a{
+            text-decoration: none;
+        }
+
+        .hero button{
+            padding: 12px 26px;
+            border: none;
+            background-color: #cc0000;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero button:hover{
+            background-color: #a80000;
+        }
+
+        /* ===== CARDS ===== */
+
+        .cards{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+        .card{
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover{
+            transform: translateY(-5px);
+        }
+
+        .card h3{
+            font-size: 32px;
+            color: #cc0000;
+            margin-bottom: 10px;
+        }
+
+        .card p{
+            color: #555;
+        }
+
+        /* ===== RESPONSIVE ===== */
+
+        @media(max-width: 768px){
+
+            header{
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .dashboard{
+                flex-direction: column;
+            }
+
+            .sidebar{
+                width: 100%;
+            }
+
+            .cards{
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1{
+                font-size: 28px;
+            }
+
+            .logo{
+                font-size: 32px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+     {%  block header%}
+    {% include 'header.html' %}
+    {% endblock  %}
+
+    <!-- ===== MAIN ===== -->
+
+    <main class="dashboard">
+
+
+           {%  block navigation%}
+    {% include 'navigation.html' %}
+    {% endblock  %}
+        <!-- ===== CONTENT ===== -->
+
+        <section class="content">
+
+            <div class="hero">
+
+                <h1>Electronics Wholesale & Distribution</h1>
+
+                <p>
+                    Allied Business Corporation supplies quality
+                    electronics products, appliances, accessories,
+                    and branded items across Kerala since 1995.
+                </p>
+
+                <a href="{% url 'products' %}">
+                    <button>Explore Products</button>
+                </a>
+
+            </div>
+
+            <!-- ===== CARDS ===== -->
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>1000+</h3>
+                    <p>Products Available</p>
+                </div>
+
+                <div class="card">
+                    <h3>50+</h3>
+                    <p>Partner Brands</p>
+                </div>
+
+                <div class="card">
+                    <h3>25 Years</h3>
+                    <p>Industry Experience</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    {%  block footer%}
+    {% include 'footer.html' %}
+    {% endblock  %}
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/navigation.css' %}">
+
+<aside class="sidebar">
+
+    <h2>Menu</h2>
+
+    <ul>
+        <li><a href="{% url 'products' %}">Products</a></li>
+        <li><a href="{% url 'services' %}">Services</a></li>
+        <li><a href="{% url 'brands' %}">Brands</a></li>
+        <li><a href="{% url 'orders' %}">Orders</a></li>
+        <li><a href="{% url 'aboutus' %}">About Us</a></li>
+        <li><a href="{% url 'Contactus' %}">Contact Us</a></li>
+    </ul>
+
+</aside>

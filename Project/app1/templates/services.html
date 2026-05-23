@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Boxes</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background-color: #f3f3f3;
+            padding: 40px;
+        }
+
+        .alert-box{
+            width: 80%;
+            background-color: #f7f7f7;
+            border: 3px solid orange;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px auto;
+
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icon{
+            font-size: 30px;
+            color: orange;
+        }
+
+        .text{
+            font-size: 24px;
+            color: #111;
+            line-height: 1.5;
+        }
+
+        .text a{
+            color: #0073bb;
+            text-decoration: none;
+        }
+
+        .text a:hover{
+            text-decoration: underline;
+        }
+        hr{
+    border: none;
+    height: 2px;
+    background-color: gray;
+
+    width: 80%;
+
+    margin: 20px auto;
+}
+.text1{
+    text-align: center;
+}
+
+.text2{
+    text-align: center;
+}
+
+    
+        .container{
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .title{
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .box-container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .help-box{
+            background-color: white;
+            border: 1px solid #d5d5d5;
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .help-box:hover{
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+        }
+
+        .icon{
+            font-size: 55px;
+        }
+
+        .content h2{
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: #111;
+        }
+
+        .content p{
+            font-size: 18px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        @media(max-width: 900px){
+
+            .box-container{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media(max-width: 600px){
+
+            .box-container{
+                grid-template-columns: 1fr;
+            }
+        }
+        .auth-buttons{
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.auth-buttons a{
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:bold;
+    transition:0.3s;
+    font-size:14px;
+}
+
+.login-btn{
+    border:2px solid #cc0000;
+    color:#cc0000;
+    background:white;
+}
+
+.login-btn:hover{
+    background:#cc0000;
+    color:white;
+}
+
+.signup-btn{
+    background:#cc0000;
+    color:white;
+}
+
+.signup-btn:hover{
+    background:#990000;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        {%  block header%}
+    {% include 'header.html' %}
+    {% endblock  %}
+    </header>
+
+    <div class="alert-box">
+
+        <div class="icon">
+            ⚠
+        </div>
+
+        <div class="text">
+            You can view the content of this page in your preferred language,
+            by clicking <a href="#">here</a>.
+            For detailed steps on how to change your language settings,
+            see our Help page.
+        </div>
+
+    </div>
+
+    <div class="alert-box">
+
+        <div class="icon">
+            ⚠
+        </div>
+
+        <div class="text">
+            For information on our live sale events, including promotions,
+            deals, cashbacks, and quick solutions,
+            refer to our Help page on
+            <a href="#">Sale Events</a>.
+        </div>
+
+    </div>
+
+    <div class="alert-box">
+
+        <div class="icon">
+            ⚠
+        </div>
+
+        <div class="text">
+            For support during your shopping journey,
+            refer to the
+            <a href="#">Customer Service - Frequently Asked Questions</a>
+            Help page.
+        </div>
+
+    </div>
+
+    <div class="text1">
+        <h2>Hello. What can we help you with?</h2>
+    </div>
+
+    <hr>
+    
+    <div class="container">
+
+        <div class="title">
+            Some things you can do here
+        </div>
+
+        <div class="box-container">
+
+            <div class="help-box">
+                <div class="icon">📦</div>
+
+                <div class="content">
+                    <h2>Your Orders</h2>
+                    <p>Track packages<br>Edit or cancel orders</p>
+                </div>
+            </div>
+
+            <div class="help-box">
+                <div class="icon">🔄</div>
+
+                <div class="content">
+                    <h2>Returns and Refunds</h2>
+                    <p>Return or exchange items<br>Print return mailing labels</p>
+                </div>
+            </div>
+
+            <div class="help-box">
+                <div class="icon">🏠</div>
+
+                <div class="content">
+                    <h2>Manage Addresses</h2>
+                    <p>Update your addresses<br>Add address, landmark details</p>
+                </div>
+            </div>
+
+            <div class="help-box">
+                <div class="icon">⭐</div>
+
+                <div class="content">
+                    <h2>Manage Prime</h2>
+                    <p>View your benefits<br>Membership details</p>
+                </div>
+            </div>
+
+            <div class="help-box">
+                <div class="icon">💳</div>
+
+                <div class="content">
+                    <h2>Payment Settings</h2>
+                    <p>Add or edit payment methods<br>Change expired cards</p>
+                </div>
+            </div>
+
+            <div class="help-box">
+                <div class="icon">👤</div>
+
+                <div class="content">
+                    <h2>Account Settings</h2>
+                    <p>Change email or password<br>Update login information</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+            {%  block footer%}
+    {% include 'footer.html' %}
+    {% endblock  %}
+    </footer>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders Page</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        /* HEADER */
+
+        .header{
+            background: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header h1{
+            color: #e00000;
+        }
+
+        /* MAIN CONTAINER */
+
+        .container{
+            width: 90%;
+            margin: 40px auto;
+        }
+
+        /* ORDER CARDS */
+
+        .orders-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .order-card{
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .order-card:hover{
+            transform: translateY(-5px);
+        }
+
+        .order-title{
+            font-size: 24px;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .order-info{
+            color: gray;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .status{
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .delivered{
+            background: #d4edda;
+            color: green;
+        }
+
+        .pending{
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .cancelled{
+            background: #f8d7da;
+            color: red;
+        }
+
+        .btn{
+            display: inline-block;
+            text-decoration: none;
+            background: #e00000;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .btn:hover{
+            background: #b80000;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+     <header>
+        {%  block header%}
+    {% include 'header.html' %}
+    {% endblock  %}
+     </header>
+
+    <div class="header">
+        <h1>My Orders</h1>
+    </div>
+
+    <!-- MAIN -->
+
+    <div class="container">
+
+        <div class="orders-grid">
+
+            <!-- ORDER 1 -->
+
+            <div class="order-card">
+                <h2 class="order-title">Samsung Smart TV</h2>
+
+                <p class="order-info">
+                    Order ID: #1025 <br>
+                    Price: ₹45,000 <br>
+                    Date: 16 May 2026
+                </p>
+
+                <span class="status delivered">Delivered</span>
+
+                <br><br>
+
+                <a href="#" class="btn">View Details</a>
+            </div>
+
+            <!-- ORDER 2 -->
+
+            <div class="order-card">
+                <h2 class="order-title">Voltas Air Conditioner</h2>
+
+                <p class="order-info">
+                    Order ID: #1026 <br>
+                    Price: ₹32,000 <br>
+                    Date: 14 May 2026
+                </p>
+
+                <span class="status pending">Pending</span>
+
+                <br><br>
+
+                <a href="#" class="btn">Track Order</a>
+            </div>
+
+            <!-- ORDER 3 -->
+
+            <div class="order-card">
+                <h2 class="order-title">LG Washing Machine</h2>
+
+                <p class="order-info">
+                    Order ID: #1027 <br>
+                    Price: ₹28,000 <br>
+                    Date: 10 May 2026
+                </p>
+
+                <span class="status cancelled">Cancelled</span>
+
+                <br><br>
+
+                <a href="#" class="btn">Reorder</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+            {%  block footer%}
+    {% include 'footer.html' %}
+    {% endblock  %}
+    </footer>
+</body>
+</html>

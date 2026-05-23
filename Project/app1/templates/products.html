@@ -1,0 +1,344 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Allied Business Corporation</title>
+    <link rel="stylesheet" href="{% static 'css/navigation.css' %}">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:sans-serif;
+            background:#f4f4f4;
+        }
+
+        /* ===== MAIN LAYOUT ===== */
+
+        .main-layout{
+            display:flex;
+        }
+
+        /* ===== HERO ===== */
+
+.hero{
+    flex:1;
+    background:#1a1a2e;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px 20px;
+}
+
+        .hero h1{
+            font-size:50px;
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            color:#ccc;
+            font-size:18px;
+            max-width:700px;
+            line-height:1.7;
+        }
+
+        /* ===== PRODUCTS ===== */
+
+      .products-section{
+    padding:0px 40px 40px;
+    background:#1a1a2e;
+}
+
+        .section-title{
+            text-align:center;
+            margin-bottom:50px;
+        }
+
+        .section-title h2{
+            font-size:42px;
+            color: white;
+        }
+
+        .products-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+            gap:25px;
+        }
+
+        .product-card{
+            background:white;
+            border-radius:10px;
+            overflow:hidden;
+            box-shadow:0 3px 10px rgba(0,0,0,0.08);
+            transition:0.3s;
+        }
+
+        .product-card:hover{
+            transform:translateY(-6px);
+        }
+
+        .product-card img{
+            width:100%;
+            height:240px;
+            object-fit:cover;
+        }
+
+        .product-info{
+            padding:20px;
+        }
+
+        .product-info h3{
+            margin-bottom:10px;
+            color:#222;
+        }
+
+        .product-info p{
+            color:#666;
+            font-size:14px;
+            line-height:1.6;
+            margin-bottom:15px;
+        }
+
+        .brands{
+            margin-bottom:15px;
+        }
+
+        .brands span{
+            background:#eee;
+            padding:6px 10px;
+            border-radius:5px;
+            font-size:12px;
+            margin-right:6px;
+        }
+
+        .price{
+            font-size:28px;
+            color:#cc0000;
+            font-weight:bold;
+            margin-bottom:15px;
+        }
+
+        .buy-btn{
+            width:100%;
+            padding:12px;
+            border:none;
+            background:#cc0000;
+            color:white;
+            font-size:15px;
+            font-weight:bold;
+            border-radius:6px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .buy-btn:hover{
+            background:#a80000;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer{
+            background:#1a1a2e;
+            color:#ccc;
+            text-align:center;
+            padding:25px;
+            margin-top:40px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+
+        @media(max-width:768px){
+
+            .main-layout{
+                flex-direction:column;
+            }
+
+            .hero h1{
+                font-size:36px;
+            }
+
+            .products-section{
+                padding:30px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+
+    {% block header %}
+    {% include 'header.html' %}
+    {% endblock %}
+
+    <!-- ===== HERO + SIDEBAR ===== -->
+
+    <div class="main-layout">
+
+        {% block navigation %}
+        {% include 'navigation.html' %}
+        {% endblock %}
+
+        <section class="hero">
+
+            <h1>Our Products</h1>
+
+            <p>
+                Premium electronics and home appliances from trusted brands.
+            </p>
+
+        </section>
+
+    </div>
+
+    <!-- ===== PRODUCTS ===== -->
+
+    <section class="products-section">
+
+        <div class="section-title">
+            <h2>Featured Products</h2>
+        </div>
+
+        <div class="products-grid">
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product-card">
+
+                <img src="https://images.unsplash.com/photo-1600566753151-384129cf4e3e?q=80&w=1200&auto=format&fit=crop"
+                     alt="Air Conditioner">
+
+                <div class="product-info">
+
+                    <h3>Air Conditioner</h3>
+
+                    <p>
+                        Energy efficient inverter AC with powerful cooling technology.
+                    </p>
+
+                    <div class="brands">
+                        <span>Voltas</span>
+                        <span>LG</span>
+                        <span>Blue Star</span>
+                    </div>
+
+                    <div class="price">₹32,999</div>
+
+                    <button class="buy-btn">View Product</button>
+
+                </div>
+
+            </div>
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product-card">
+
+                <img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?q=80&w=1200&auto=format&fit=crop"
+                     alt="Refrigerator">
+
+                <div class="product-info">
+
+                    <h3>Refrigerator</h3>
+
+                    <p>
+                        Double door refrigerator with smart cooling system.
+                    </p>
+
+                    <div class="brands">
+                        <span>Whirlpool</span>
+                        <span>LG</span>
+                        <span>Samsung</span>
+                    </div>
+
+                    <div class="price">₹41,500</div>
+
+                    <button class="buy-btn">View Product</button>
+
+                </div>
+
+            </div>
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product-card">
+
+                <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1200&auto=format&fit=crop"
+                     alt="Washing Machine">
+
+                <div class="product-info">
+
+                    <h3>Washing Machine</h3>
+
+                    <p>
+                        Front load washing machine with AI wash technology.
+                    </p>
+
+                    <div class="brands">
+                        <span>LG</span>
+                        <span>Whirlpool</span>
+                        <span>Samsung</span>
+                    </div>
+
+                    <div class="price">₹27,999</div>
+
+                    <button class="buy-btn">View Product</button>
+
+                </div>
+
+            </div>
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product-card">
+
+                <img src="https://images.unsplash.com/photo-1586208958839-06c17cacdf08?q=80&w=1200&auto=format&fit=crop"
+                     alt="Gas Stove">
+
+                <div class="product-info">
+
+                    <h3>Gas Stove</h3>
+
+                    <p>
+                        Premium 4 burner gas stove with toughened glass finish.
+                    </p>
+
+                    <div class="brands">
+                        <span>Prestige</span>
+                        <span>Butterfly</span>
+                        <span>Pigeon</span>
+                    </div>
+
+                    <div class="price">₹8,499</div>
+
+                    <button class="buy-btn">View Product</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+
+    {% block footer %}
+    {% include 'footer.html' %}
+    {% endblock %}
+
+</body>
+</html>

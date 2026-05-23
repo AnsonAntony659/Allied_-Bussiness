@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        /* HEADER */
+
+        .header{
+            background: white;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header h1{
+            color: #e00000;
+            font-size: 40px;
+        }
+
+        .header p{
+            color: gray;
+            margin-top: 10px;
+        }
+
+        /* MAIN */
+
+        .container{
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* CONTACT INFO */
+
+        .contact-info{
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h2{
+            color: #e00000;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p{
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .info-box{
+            margin-bottom: 20px;
+        }
+
+        .info-box h3{
+            color: #222;
+            margin-bottom: 5px;
+        }
+
+        .info-box span{
+            color: gray;
+        }
+
+        /* FORM */
+
+        .contact-form{
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h2{
+            color: #e00000;
+            margin-bottom: 20px;
+        }
+
+        .input-box{
+            margin-bottom: 20px;
+        }
+
+        .input-box input,
+        .input-box textarea{
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .input-box textarea{
+            resize: none;
+            height: 150px;
+        }
+
+        .btn{
+            background: #e00000;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover{
+            background: #b80000;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width: 768px){
+
+            .container{
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- HEADER -->
+     <header>
+        {%  block header%}
+    {% include 'header.html' %}
+    {% endblock  %}
+     </header>
+
+    <div class="header">
+        <h1>Contact Us</h1>
+        <p>Get in touch with Allied Business Corporation</p>
+    </div>
+
+    <!-- MAIN -->
+
+    <div class="container">
+
+        <!-- CONTACT INFO -->
+
+        <div class="contact-info">
+
+            <h2>Contact Information</h2>
+
+            <p>
+                We are here to help you with products, services,
+                orders, and business inquiries.
+            </p>
+
+            <div class="info-box">
+                <h3>📍 Address</h3>
+                <span>Allied Business Corporation, Kerala, India</span>
+            </div>
+
+            <div class="info-box">
+                <h3>📞 Phone</h3>
+                <span>+91 98765 43210</span>
+            </div>
+
+            <div class="info-box">
+                <h3>📧 Email</h3>
+                <span>support@alliedbusiness.com</span>
+            </div>
+
+            <div class="info-box">
+                <h3>🕒 Working Hours</h3>
+                <span>Monday - Saturday : 9 AM - 7 PM</span>
+            </div>
+
+        </div>
+
+        <!-- CONTACT FORM -->
+
+        <div class="contact-form">
+
+            <h2>Send Message</h2>
+
+            <form>
+
+                <div class="input-box">
+                    <input type="text" placeholder="Your Name">
+                </div>
+
+                <div class="input-box">
+                    <input type="email" placeholder="Your Email">
+                </div>
+
+                <div class="input-box">
+                    <input type="text" placeholder="Subject">
+                </div>
+
+                <div class="input-box">
+                    <textarea placeholder="Your Message"></textarea>
+                </div>
+
+                <button class="btn">Send Message</button>
+
+            </form>
+
+        </div>
+
+    </div>
+    <footer>
+            {%  block footer%}
+    {% include 'footer.html' %}
+    {% endblock  %}
+    </footer>
+
+</body>
+</html>
